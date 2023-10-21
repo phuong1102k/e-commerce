@@ -1,0 +1,38 @@
+.base-status,
+.base-percent {
+  position: absolute;
+  padding: 8px 16px;
+  background-color: var(--btn-clr-primary-hover);
+}
+
+.base-status {
+  top: 0;
+  left: 0;
+  border-radius: var(--border-radius) 0 var(--border-radius) 0;
+}
+
+.base-percent {
+  top: 0;
+  left: calc(100% - 61.56px);
+  border-radius: 0 var(--border-radius) 0 var(--border-radius);
+}
+
+// Responsive
+// tablet and mobile
+@media screen and (max-width: 63.9375em) {
+}
+
+// tablet
+@media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+}
+
+// mobile
+@media screen and (max-width: 46.1875em) {
+  .summer-product-list {
+    .base-percent {
+      top: 4.8rem;
+      left: 0;
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    }
+  }
+}

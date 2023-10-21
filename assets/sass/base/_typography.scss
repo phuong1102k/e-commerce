@@ -1,0 +1,144 @@
+html {
+  font-size: 62.5%;
+  line-height: 1.5;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.search-input,
+.email-input {
+  font-size: inherit;
+}
+
+// button
+.base-btn {
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--secondary-clr);
+  }
+}
+// end button
+
+.base-banner-caption {
+  & > *:not(.base-btn) {
+    color: var(--secondary-clr);
+  }
+  & .base-title {
+    text-transform: capitalize;
+    font-size: 3.2rem;
+  }
+}
+
+// start link
+.base-a {
+  text-decoration: underline;
+}
+// end link
+
+// card product
+.base-status,
+.base-percent {
+  color: var(--secondary-clr);
+}
+
+.base-name {
+  font-size: 2.4rem;
+  text-transform: capitalize;
+}
+
+.base-price {
+  &-original {
+    text-decoration: line-through;
+  }
+
+  &-sale {
+    font-size: 2rem;
+  }
+}
+// end card product
+
+main {
+  // start feature
+  .feature {
+    &-text {
+      color: var(--secondary-clr);
+      &-title {
+        font-weight: 700;
+      }
+
+      &-sub {
+        font-size: 1.4rem;
+      }
+    }
+    // end feature
+  }
+
+  // start daily
+  .daily-product-list {
+    .product-name {
+      font-size: 4rem;
+    }
+
+    .product-price {
+      &-original {
+        text-decoration: line-through;
+        font-size: 2rem;
+      }
+
+      &-sale {
+        font-size: 4rem;
+      }
+    }
+    .countdown {
+      & > * {
+        text-transform: capitalize;
+        font-size: 2.4rem;
+      }
+    }
+  }
+  // end daily
+
+  .question {
+    .base-desc {
+      text-align: center;
+    }
+  }
+}
+
+// about
+// head-title
+.head-title {
+  font-size: 4.8rem;
+}
+
+.about {
+  h2 {
+    text-align: center;
+  }
+
+  .text h3 {
+    font-size: 3.2rem;
+  }
+}
+
+// tablet and mobile
+@media screen and (max-width: 63.9375em) {
+  .email .wrapper .base-caption {
+    text-align: center;
+  }
+}
+
+// tablet
+@media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+}
+
+// mobile
+@media screen and (max-width: 46.1875em) {
+  .lookbook .base-title {
+    text-align: center;
+  }
+}

@@ -1,0 +1,50 @@
+// about
+.about {
+  .video {
+    width: 100%;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+
+    & > video {
+      width: 100%;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+    }
+  }
+
+  & h2 {
+    margin-block: var(--m-item);
+    padding-inline: 2.4rem;
+  }
+}
+// more
+.more {
+  &-list {
+    .item {
+      padding: var(--pd-item);
+      border: 2px solid var(--input-border-clr);
+      border-radius: var(--border-radius);
+
+      .image-cover {
+        border-radius: var(--border-radius);
+        overflow: hidden;
+
+        img {
+          object-fit: cover;
+        }
+      }
+
+      &-body {
+        margin-top: 1rem;
+        &-desc {
+          margin-bottom: 1rem;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}

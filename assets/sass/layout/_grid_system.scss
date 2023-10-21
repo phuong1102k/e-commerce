@@ -1,0 +1,283 @@
+// Start home
+.wrapper {
+  width: min(100%, 160rem);
+}
+// banner
+.banner {
+  .wrapper {
+    display: grid;
+    gap: var(--m-item);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "banner-1 banner-1"
+      "banner-2 banner-3";
+  }
+
+  &-1,
+  &-2,
+  &-3 {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    position: relative;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-1 {
+    grid-area: banner-1;
+    img {
+      aspect-ratio: 21 / 9;
+      padding: 0;
+    }
+  }
+
+  &-2,
+  &-3 > img {
+    aspect-ratio: 1 / 1;
+    padding: 0;
+  }
+
+  &-2 {
+    grid-area: banner-2;
+  }
+  &-3 {
+    grid-area: banner-3;
+  }
+}
+
+// bundle
+.bundle {
+  &-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    gap: var(--m-item);
+  }
+}
+
+.summer {
+  &-product-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--m-item);
+  }
+}
+
+// concern
+.concern {
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 35rem);
+
+    gap: var(--m-item);
+
+    .image-cover {
+      @include size(100%, 100%);
+
+      overflow: hidden;
+      border-radius: var(--border-radius);
+
+      img {
+        @include size(inherit, inherit);
+        object-fit: cover;
+      }
+    }
+
+    &-item {
+      position: relative;
+
+      .base-title {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 2.4rem;
+        max-width: 100%;
+        color: var(--secondary-clr);
+      }
+
+      &:first-child {
+        grid-column: 1 / span 2;
+      }
+
+      &:nth-child(2) {
+        grid-column: 3 / span 1;
+      }
+
+      &:nth-child(3) {
+        grid-column: 1 / span 1;
+      }
+
+      &:last-child {
+        grid-column: 2 / span 2;
+      }
+    }
+  }
+}
+
+// ingredient
+.ingredient {
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 35rem);
+    gap: var(--m-item);
+
+    &-item {
+      position: relative;
+
+      &:first-child {
+        grid-row: 1 / span 2;
+      }
+
+      &:last-child {
+        min-height: 17rem;
+      }
+
+      & > .image-cover {
+        @include size(100%, 100%);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+
+        & > img {
+          @include size(inherit, inherit);
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+// advertise
+.advertise {
+  &-grid {
+    display: grid;
+    grid-template-areas:
+      "ad-1 ad-2"
+      "ad-3 ad-3";
+    gap: var(--m-item);
+
+    &-item {
+      &:first-child,
+      &:nth-child(2) {
+        max-height: 50rem;
+      }
+
+      &:first-child {
+        grid-area: ad-1;
+      }
+
+      &:nth-child(2) {
+        grid-area: ad-2;
+      }
+
+      &:last-child {
+        grid-area: ad-3;
+      }
+    }
+  }
+}
+
+// End Home page
+
+// Start About page
+.about {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(33rem, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    gap: var(--m-item);
+
+    .grid-item {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      &.text {
+        @include flex(center, start, no-wrap, column);
+      }
+    }
+  }
+}
+// End About page
+
+// Responsive
+// tablet and mobile
+@media screen and (max-width: 63.9375em) {
+}
+
+// tablet
+@media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+}
+
+// mobile
+@media screen and (max-width: 46.1875em) {
+  // start home
+
+  //banner
+  // .banner {
+  //   .wrapper {
+  //     display: grid;
+  //     gap: var(--m-item);
+  //     grid-template-areas:
+  //       "banner-1"
+  //       "banner-2"
+  //       "banner-3";
+  //   }
+
+  //   &-1 {
+  //     img {
+  //       aspect-ratio: 1 / 1;
+  //       padding: 0;
+  //     }
+  //   }
+  // }
+
+  // concern
+  .concern {
+    &-grid {
+      display: flex;
+      flex-direction: column;
+
+      &-item {
+        &:first-child,
+        &:last-child {
+          img {
+            aspect-ratio: 16 / 9;
+          }
+        }
+      }
+    }
+  }
+
+  // ingredient
+  .ingredient {
+    &-grid {
+      grid-template-columns: repeat(1, 1fr) !important;
+    }
+  }
+
+  .advertise-grid {
+    grid-template-areas:
+      "ad-1"
+      "ad-2"
+      "ad-3";
+  }
+
+  // end home
+
+  //start about
+  .about .grid-container {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+
+  // end about
+}
