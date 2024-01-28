@@ -11,6 +11,15 @@
     grid-template-areas:
       "banner-1 banner-1"
       "banner-2 banner-3";
+
+    @include mobile {
+      display: grid;
+      gap: var(--m-item);
+      grid-template-areas:
+        "banner-1 banner-1"
+        "banner-2 banner-2"
+        "banner-3 banner-3";
+    }
   }
 
   &-1,
@@ -31,6 +40,11 @@
     img {
       aspect-ratio: 21 / 9;
       padding: 0;
+
+      @include mobile {
+        aspect-ratio: 4 / 3;
+        padding: 0;
+      }
     }
   }
 
@@ -55,6 +69,10 @@
     grid-template-columns: 2fr 1fr;
 
     gap: var(--m-item);
+
+    @include mobile {
+      grid-template-columns: 1fr !important;
+    }
   }
 }
 
@@ -63,6 +81,15 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: var(--m-item);
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr) !important;
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr) !important;
+    }
   }
 }
 
@@ -72,8 +99,12 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 35rem);
-
     gap: var(--m-item);
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
 
     .image-cover {
       @include size(100%, 100%);
@@ -114,6 +145,15 @@
       &:last-child {
         grid-column: 2 / span 2;
       }
+
+      @include mobile {
+        &:first-child,
+        &:last-child {
+          img {
+            aspect-ratio: 16 / 9;
+          }
+        }
+      }
     }
   }
 }
@@ -125,6 +165,10 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 35rem);
     gap: var(--m-item);
+
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr) !important;
+    }
 
     &-item {
       position: relative;
@@ -160,6 +204,13 @@
       "ad-3 ad-3";
     gap: var(--m-item);
 
+    @include mobile {
+      grid-template-areas:
+        "ad-1"
+        "ad-2"
+        "ad-3";
+    }
+
     &-item {
       &:first-child,
       &:nth-child(2) {
@@ -191,6 +242,10 @@
     grid-template-rows: repeat(2, 1fr);
     gap: var(--m-item);
 
+    @include mobile {
+      grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    }
+
     .grid-item {
       border-radius: var(--border-radius);
       overflow: hidden;
@@ -208,76 +263,3 @@
   }
 }
 // End About page
-
-// Responsive
-// tablet and mobile
-@media screen and (max-width: 63.9375em) {
-}
-
-// tablet
-@media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
-}
-
-// mobile
-@media screen and (max-width: 46.1875em) {
-  // start home
-
-  //banner
-  // .banner {
-  //   .wrapper {
-  //     display: grid;
-  //     gap: var(--m-item);
-  //     grid-template-areas:
-  //       "banner-1"
-  //       "banner-2"
-  //       "banner-3";
-  //   }
-
-  //   &-1 {
-  //     img {
-  //       aspect-ratio: 1 / 1;
-  //       padding: 0;
-  //     }
-  //   }
-  // }
-
-  // concern
-  .concern {
-    &-grid {
-      display: flex;
-      flex-direction: column;
-
-      &-item {
-        &:first-child,
-        &:last-child {
-          img {
-            aspect-ratio: 16 / 9;
-          }
-        }
-      }
-    }
-  }
-
-  // ingredient
-  .ingredient {
-    &-grid {
-      grid-template-columns: repeat(1, 1fr) !important;
-    }
-  }
-
-  .advertise-grid {
-    grid-template-areas:
-      "ad-1"
-      "ad-2"
-      "ad-3";
-  }
-
-  // end home
-
-  //start about
-  .about .grid-container {
-    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
-  }
-
-  // end about
-}

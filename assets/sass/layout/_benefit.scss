@@ -1,0 +1,31 @@
+.benefit-bar {
+  margin: 0 3.2rem;
+  padding: var(--pd-item);
+
+  background: linear-gradient(
+    278deg,
+    rgba(190, 136, 104, 1) 4%,
+    rgba(154, 148, 115, 1) 50%,
+    rgba(96, 95, 71, 1) 100%
+  );
+  border-radius: var(--border-radius);
+
+  swiper-slide {
+    @include flex;
+    font-size: 1.4rem;
+    color: var(--secondary-clr);
+
+    .benefit-icon {
+      width: 5.5rem;
+      height: 5.5rem;
+      margin-right: 2rem;
+      border: 1px solid var(--secondary-clr);
+      border-radius: 50%;
+      padding: 1rem;
+    }
+  }
+
+  @include mobile {
+    margin: 0 var(--pd-inline-res) !important;
+  }
+}

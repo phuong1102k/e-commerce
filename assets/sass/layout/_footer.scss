@@ -4,9 +4,17 @@ footer {
   padding-inline: var(--pd-inline);
   margin-bottom: var(--pd-item);
 
+  @include mobile {
+    padding-inline: var(--pd-inline-res);
+  }
+
   .footer-content {
     margin-bottom: var(--m-item);
     @include flex(start, start);
+
+    @include tablet_and_mobile {
+      flex-direction: column !important;
+    }
 
     &-item {
       width: 100%;
@@ -50,6 +58,12 @@ footer {
     @include flex(space-between, center, wrap);
     gap: var(--pd-item);
 
+    @include mobile {
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center;
+    }
+
     .payment-list {
       @include flex(start, start);
       gap: calc(var(--m-item) / 3);
@@ -58,26 +72,26 @@ footer {
   // end copyright
 }
 
-// tablet and mobile
-@media screen and (max-width: 63.9375em) {
-  .footer-content {
-    flex-direction: column !important;
-  }
-}
+// // tablet and mobile
+// @media screen and (max-width: 63.9375em) {
+//   .footer-content {
+//     flex-direction: column !important;
+//   }
+// }
 
-// tablet
-@media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
-}
+// // tablet
+// @media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+// }
 
-// mobile
-@media screen and (max-width: 46.1875em) {
-  footer {
-    padding-inline: var(--pd-inline-res);
+// // mobile
+// @media screen and (max-width: 46.1875em) {
+//   footer {
+//     padding-inline: var(--pd-inline-res);
 
-    .copyright {
-      flex-direction: column !important;
-      align-items: center !important;
-      text-align: center;
-    }
-  }
-}
+//     .copyright {
+//       flex-direction: column !important;
+//       align-items: center !important;
+//       text-align: center;
+//     }
+//   }
+// }

@@ -28,33 +28,9 @@ main {
     @include flex;
     margin-top: var(--m-feature);
     padding-inline: var(--pd-inline);
-  }
 
-  .benefit-bar {
-    margin: 0 3.2rem;
-    padding: var(--pd-item);
-
-    background: linear-gradient(
-      278deg,
-      rgba(190, 136, 104, 1) 4%,
-      rgba(154, 148, 115, 1) 50%,
-      rgba(96, 95, 71, 1) 100%
-    );
-    border-radius: var(--border-radius);
-
-    swiper-slide {
-      @include flex;
-
-      color: var(--secondary-clr);
-
-      .benefit-icon {
-        width: 5.5rem;
-        height: 5.5rem;
-        margin-right: 2rem;
-        border: 1px solid var(--secondary-clr);
-        border-radius: 50%;
-        padding: 1rem;
-      }
+    @include mobile {
+      padding-inline: var(--pd-inline-res);
     }
   }
 
@@ -77,6 +53,7 @@ main {
         border: var(--border);
         border-radius: var(--border-radius);
         padding: var(--pd-item);
+
         .img-cover {
           flex-basis: 40%;
           width: 100%;
@@ -112,13 +89,16 @@ main {
             }
           }
         }
+
+        @include mobile {
+          flex-direction: column !important;
+        }
       }
     }
   }
 
   .lookbook {
-    background: fixed border-box center / cover url("../../images/lookbook/bg_newletter.jpg")
-      no-repeat;
+    background: fixed border-box center / cover url("../images/lookbook/bg_newletter.jpg") no-repeat;
 
     padding: 6.4rem 0;
 
@@ -130,17 +110,45 @@ main {
       gap: var(--m-item);
       overflow: hidden;
 
+      @include mobile {
+        gap: var(--pd-item);
+        flex-wrap: wrap;
+      }
+
       &-text {
         margin-left: var(--m-feature);
+
+        @include mobile {
+          margin: var(--pd-inline-res) var(--pd-item) 0 !important;
+          margin-top: var(--pd-inline-res);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          flex: 1;
+        }
       }
 
       &-image {
         max-height: 30rem;
 
+        @include mobile {
+          width: 100%;
+          max-height: 30rem;
+
+          position: relative;
+        }
+
         & > img {
           height: inherit;
           aspect-ratio: 1/1;
           object-fit: cover;
+
+          @include mobile {
+            height: unset !important;
+            aspect-ratio: unset !important;
+            object-fit: cover;
+          }
         }
       }
     }
@@ -179,15 +187,18 @@ main {
       .bundle-video {
         position: relative;
         overflow: hidden;
+        border-radius: var(--border-radius);
 
         video {
           width: 100%;
           height: 100%;
+          object-fit: cover;
+          aspect-ratio: 16 / 9;
         }
       }
 
       .bundle-product {
-        width: min(100%, 50rem);
+        width: 100%;
         padding: var(--pd-item);
         border: var(--border);
         border-radius: var(--border-radius);
@@ -229,10 +240,15 @@ main {
         border-radius: var(--border-radius);
         overflow: hidden;
 
+        @include mobile {
+          height: 40rem;
+        }
+
         video {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          aspect-ratio: 1 / 1;
         }
       }
     }
@@ -243,6 +259,11 @@ main {
       border-radius: var(--border-radius);
       position: relative;
 
+      @include mobile {
+        @include flex(start, start);
+        gap: var(--pd-item);
+      }
+
       .image-cover {
         overflow: hidden;
         img {
@@ -251,27 +272,32 @@ main {
 
           border-radius: var(--border-radius);
         }
+
+        @include mobile {
+          max-width: 20rem;
+        }
       }
 
-      .item-body {
+      &-body {
         margin-top: var(--pd-item);
+
+        @include mobile {
+          margin-top: 0 !important;
+          height: min(100%, 20rem);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          flex: 1;
+        }
 
         &-bottom {
           @include flex(space-between, end);
+
+          @include mobile {
+            gap: calc(3 * var(--pd-item));
+          }
         }
       }
-    }
-  }
-
-  .type {
-    .image-cover {
-      border-radius: var(--border-radius);
-      overflow: hidden;
-      max-height: 90rem;
-    }
-    img {
-      aspect-ratio: 9 / 16;
-      object-fit: cover;
     }
   }
 
@@ -294,12 +320,23 @@ main {
           overflow: hidden;
 
           img {
+            aspect-ratio: 4 / 3;
             object-fit: cover;
           }
         }
 
         &-body {
           margin-top: 1rem;
+
+          .base-name {
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
           &-desc {
             margin-bottom: 1rem;
             display: -webkit-box;
@@ -351,8 +388,11 @@ main {
   .question {
     padding: 6.4rem 0;
     padding-inline: var(--pd-inline);
+    background: center / cover fixed url("../images/question/cosmestic.jpg") no-repeat;
 
-    background: center / cover fixed url("../../images/question/cosmestic.jpg") no-repeat;
+    @include mobile {
+      padding-inline: var(--pd-inline-res) !important;
+    }
     .wrapper {
       @include flex(center, center, no-wrap, column);
 
@@ -378,103 +418,5 @@ main {
         }
       }
     }
-  }
-}
-
-// Responsive
-// tablet and mobile
-@media screen and (max-width: 63.9375em) {
-}
-
-// tablet
-@media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
-  .summer-product-list {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-}
-
-// mobile
-@media screen and (max-width: 46.1875em) {
-  main > * {
-    padding-inline: var(--pd-inline-res);
-  }
-
-  // benefit-bar
-  .benefit-bar {
-    margin: 0 var(--pd-inline-res) !important;
-  }
-
-  // daily
-  .daily-product-list {
-    .item {
-      flex-direction: column !important;
-    }
-  }
-
-  // lookbook
-  .lookbook {
-    .content {
-      gap: var(--pd-item);
-      flex-wrap: wrap;
-
-      &-text {
-        margin: var(--pd-inline-res) var(--pd-item) 0 !important;
-        margin-top: var(--pd-inline-res);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex: 1;
-      }
-
-      &-image {
-        width: 100%;
-        max-height: 30rem;
-
-        position: relative;
-
-        & > img {
-          height: unset !important;
-          aspect-ratio: unset !important;
-          object-fit: cover;
-        }
-      }
-    }
-  }
-
-  // summer
-  .summer-product-list {
-    grid-template-columns: repeat(1, 1fr) !important;
-
-    .summer-product {
-      height: 40rem;
-    }
-
-    .item {
-      @include flex(start, start);
-      gap: var(--pd-item);
-
-      .image-cover {
-        max-width: 20rem;
-      }
-
-      &-body {
-        margin-top: 0 !important;
-        height: min(100%, 20rem);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        flex: 1;
-
-        &-bottom {
-          gap: calc(3 * var(--pd-item));
-        }
-      }
-    }
-  }
-
-  // question
-  .question {
-    padding-inline: var(--pd-inline-res) !important;
   }
 }

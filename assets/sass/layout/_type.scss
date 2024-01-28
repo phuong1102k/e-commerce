@@ -1,0 +1,18 @@
+.type {
+  .item {
+    position: relative;
+    .base-banner-caption {
+      position: absolute;
+    }
+  }
+
+  .image-cover {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    max-height: 90rem;
+  }
+  img {
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+  }
+}

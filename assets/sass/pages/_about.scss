@@ -14,7 +14,7 @@
 
   & h2 {
     margin-block: var(--m-item);
-    padding-inline: 2.4rem;
+    padding-inline: calc(2 * 2.4rem);
   }
 }
 // more
@@ -22,7 +22,7 @@
   &-list {
     .item {
       padding: var(--pd-item);
-      border: 2px solid var(--input-border-clr);
+      border: var(--border);
       border-radius: var(--border-radius);
 
       .image-cover {
@@ -30,12 +30,22 @@
         overflow: hidden;
 
         img {
+          aspect-ratio: 4 / 3;
           object-fit: cover;
         }
       }
 
       &-body {
         margin-top: 1rem;
+
+        .base-name {
+          margin-bottom: 1rem;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
         &-desc {
           margin-bottom: 1rem;
           display: -webkit-box;

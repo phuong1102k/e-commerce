@@ -6,11 +6,21 @@
     @include flex(space-between);
     gap: var(--m-item);
 
+    @include mobile {
+      flex-direction: column !important;
+      padding: var(--pd-inline-res);
+    }
+
     .base-caption {
       flex-direction: column;
       align-items: start;
       justify-content: center;
       flex: 1;
+
+      @include mobile {
+        align-items: center !important;
+        margin: 0;
+      }
     }
 
     .subcribe {
@@ -55,14 +65,14 @@
   }
 }
 
-@media screen and (max-width: 46.1875em) {
-  .email .wrapper {
-    flex-direction: column !important;
-    padding: var(--pd-inline-res);
+// @media screen and (max-width: 46.1875em) {
+//   .email .wrapper {
+//     flex-direction: column !important;
+//     padding: var(--pd-inline-res);
 
-    .base-caption {
-      align-items: center !important;
-      margin: 0;
-    }
-  }
-}
+//     .base-caption {
+//       align-items: center !important;
+//       margin: 0;
+//     }
+//   }
+// }
