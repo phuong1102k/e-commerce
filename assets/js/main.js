@@ -121,31 +121,7 @@ $('.more-list').owlCarousel({
     }   
 })
 
-// detail page
-// quantity
-var amountElement = document.getElementById("amount");
-var amount = parseInt(amountElement.value);
 
-let render = (amount) => {
-    amountElement.value = amount;
-    document.querySelector('.quantity-text').textContent = amount;
-}
-// plus
-let handlePlus = () => {
-    amount++;
-    render(amount);
-}
-// minus
-let handleMinus = () => {
-    if (amount > 1) amount--;
-    render(amount);
-}
-
-amountElement.addEventListener("input", () => {
-    amount = parseInt(amountElement.value); 
-    amount = (isNaN(amount) || amount == 0) ? 1 : amount;
-    render(amount);
-});
 
 // content product detail
 var content = document.getElementById("content");
@@ -163,10 +139,10 @@ function toggleContent() {
     }
 }
 
-// tabs
+// tabs detail page
 var text = document.getElementsByClassName("text");
-var more = document.getElementsByClassName("more");
-var btn = document.getElementsByClassName("tab-button");
+var more = document.querySelectorAll(".tab-button .more");
+console.log(more);
 function toggleTab(i) {
     if (text[i].classList.contains("open")) {
         text[i].classList.remove("open");
@@ -174,6 +150,19 @@ function toggleTab(i) {
     } else {
         text[i].classList.add("open");
         more[i].classList.add("open");
+    }
+}
+
+// nav mobile
+var detail = document.querySelectorAll(".detail-mobile");
+
+function toggleNav(i) {
+    if (detail[i].classList.contains("open")) {
+        detail[i].classList.remove("open");
+   
+    } else {
+        detail[i].classList.add("open");
+     
     }
 }
 
@@ -207,3 +196,29 @@ $('.discover-grid').owlCarousel({
         
     }   
 })
+
+// // detail page
+// // quantity
+var amountElement = document.getElementById("amount");
+var amount = parseInt(amountElement.value);
+
+let render = (amount) => {
+    amountElement.value = amount;
+    document.querySelector('.quantity-text').textContent = amount;
+}
+// plus
+let handlePlus = () => {
+    amount++;
+    render(amount);
+}
+// minus
+let handleMinus = () => {
+    if (amount > 1) amount--;
+    render(amount);
+}
+
+amountElement.addEventListener("input", () => {
+    amount = parseInt(amountElement.value); 
+    amount = (isNaN(amount) || amount == 0) ? 1 : amount;
+    render(amount);
+});

@@ -1,0 +1,126 @@
+.product-view {
+  & > .wrapper {
+    display: flex;
+    gap: calc(var(--m-item) * 2);
+  }
+  .sidebar {
+    flex-basis: 20%;
+
+    @include tablet_and_mobile {
+      display: none;
+    }
+    .title {
+      font-size: 2.4rem;
+      border-bottom: 2px solid var(--btn-border-clr);
+    }
+    .catergory {
+      margin: var(--pd-item) 0;
+      a {
+        font-size: 2rem;
+      }
+      input {
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        margin-right: 1rem;
+
+        border: var(--border);
+        // border-radius: var(--border-radius);
+      }
+    }
+    button {
+      width: 100%;
+      padding: 8px;
+      border-radius: 99999px;
+      color: var(--secondary-clr);
+      background-color: var(--btn-clr-primary-hover);
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  .product {
+    flex-basis: 80%;
+
+    @include tablet_and_mobile {
+      flex-basis: unset;
+    }
+
+    .head-tab {
+      display: flex;
+      justify-content: end;
+      gap: var(--m-item);
+      margin-bottom: var(--m-item);
+
+      .price select,
+      .soft select,
+      .search input {
+        border: var(--border);
+        padding: calc(var(--search-padding) / 2);
+        flex: 1;
+        border-radius: var(--border-radius);
+      }
+
+      .search {
+        @include tablet_and_mobile {
+          display: none;
+        }
+      }
+    }
+
+    .page-tab {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: var(--pd-item);
+
+      a {
+        cursor: pointer;
+        display: block;
+        text-align: center;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        line-height: 5rem;
+        &:hover {
+          background-color: rgb(231, 229, 220);
+        }
+      }
+    }
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--m-item);
+
+    @include tablet_and_mobile {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .item {
+      padding: var(--pd-item);
+      border: var(--border);
+      border-radius: var(--border-radius);
+      position: relative;
+
+      .image-cover {
+        overflow: hidden;
+        img {
+          aspect-ratio: 1 / 1;
+          object-fit: cover;
+
+          border-radius: var(--border-radius);
+        }
+      }
+
+      &-body {
+        margin-top: var(--pd-item);
+
+        &-bottom {
+          @include flex(space-between, end);
+        }
+      }
+    }
+  }
+}

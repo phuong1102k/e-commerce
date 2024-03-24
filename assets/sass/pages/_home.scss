@@ -81,11 +81,15 @@ main {
           }
 
           .countdown-time {
+            font-size: 1rem;
             @include flex(start, center, wrap);
             gap: var(--m-item);
 
             .countdown {
               @include flex(center, center, no-wrap, column);
+              & > * {
+                font-size: 16px;
+              }
             }
           }
         }

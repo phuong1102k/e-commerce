@@ -25,6 +25,7 @@
         "img4 img5";
       gap: var(--m-item);
       flex-basis: 60%;
+      max-height: 94rem;
 
       @include mobile {
         display: none;
@@ -104,7 +105,12 @@
       }
 
       .product-price {
+        font-size: 4.8rem;
         margin-bottom: var(--m-item);
+        span {
+          font-size: 2.4rem;
+          text-decoration: line-through;
+        }
       }
 
       .product-desc {
@@ -118,6 +124,7 @@
           &.open {
             max-height: unset;
           }
+
           ul {
             list-style-type: circle;
             margin-left: var(--pd-item);

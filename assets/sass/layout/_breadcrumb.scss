@@ -1,0 +1,19 @@
+.breadcrumb {
+  .wrapper {
+    color: var(--secondary-clr);
+    padding: calc(var(--pd-item) * 5) calc(var(--pd-item) * 2);
+
+    background: linear-gradient(
+      278deg,
+      rgba(190, 136, 104, 1) 4%,
+      rgba(154, 148, 115, 1) 50%,
+      rgba(96, 95, 71, 1) 100%
+    );
+    border-radius: var(--border-radius);
+
+    span {
+      display: inline-block;
+      padding-inline: calc(var(--pd-item) / 2);
+    }
+  }
+}

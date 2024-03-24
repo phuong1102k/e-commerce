@@ -1,0 +1,39 @@
+.user {
+  .wrapper {
+    @include flex(center, center, no-wrap, column);
+
+    #user_form {
+      input {
+        display: block;
+        width: 25rem;
+        margin: calc(var(--pd-item) / 2) 0 var(--pd-item);
+        padding: calc(var(--search-padding) / 2) var(--search-padding);
+        border: var(--border);
+        border-radius: var(--border-radius);
+
+        &[type="submit"] {
+          text-align: center;
+          color: var(--secondary-clr);
+          background-color: var(--btn-clr-primary-hover);
+          padding: calc(var(--search-padding) / 2) var(--search-padding);
+
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 1.6rem;
+        }
+      }
+
+      .forgot {
+        text-decoration: underline;
+      }
+      .sign-up {
+        display: block;
+        width: 100%;
+        margin: calc(var(--pd-item) / 2) 0 var(--pd-item);
+        padding: calc(var(--search-padding) / 2 - 4px) var(--search-padding);
+        border: var(--border);
+        border-radius: var(--border-radius);
+        text-align: center;
+      }
+    }
+  }
+}

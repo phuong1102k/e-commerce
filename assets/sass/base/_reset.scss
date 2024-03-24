@@ -29,15 +29,15 @@ ul {
   list-style-type: none;
 }
 
-input {
-  all: unset;
+// input {
+//   // all: unset;
 
-  &:focus,
-  &:focus-visible {
-    outline: 2px solid #000;
-    border-radius: 8px;
-  }
-}
+//   &:focus,
+//   &:focus-visible {
+//     // outline: 2px solid var(--btn-border-clr);
+//     // border-radius: 8px;
+//   }
+// }
 
 button {
   background: none;
