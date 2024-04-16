@@ -18,14 +18,17 @@
     }
 
     .product-image-grid {
-      display: grid;
-      grid-template-areas:
-        "img1 img1"
-        "img2 img3"
-        "img4 img5";
-      gap: var(--m-item);
+      & > div {
+        display: flex;
+        gap: var(--m-item);
+        margin-bottom: var(--m-item);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
       flex-basis: 60%;
-      max-height: 94rem;
+      // max-height: 94rem;
 
       @include mobile {
         display: none;
@@ -358,6 +361,23 @@
       position: relative;
       overflow: hidden;
       border-radius: var(--border-radius);
+
+      .base-title {
+        display: block;
+      }
+
+      @include mobile {
+        .base-subtitle {
+          font-size: 1.6rem;
+        }
+        .base-title {
+          font-size: 2rem;
+          font-weight: bolder;
+        }
+        .base-btn {
+          display: none;
+        }
+      }
 
       img {
         aspect-ratio: 1 / 1;

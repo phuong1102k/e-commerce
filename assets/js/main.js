@@ -142,7 +142,6 @@ function toggleContent() {
 // tabs detail page
 var text = document.getElementsByClassName("text");
 var more = document.querySelectorAll(".tab-button .more");
-console.log(more);
 function toggleTab(i) {
     if (text[i].classList.contains("open")) {
         text[i].classList.remove("open");
@@ -154,17 +153,28 @@ function toggleTab(i) {
 }
 
 // nav mobile
-var detail = document.querySelectorAll(".detail-mobile");
+const tabs = document.querySelectorAll(".navbar-mobile .nav-list .nav");
 
-function toggleNav(i) {
-    if (detail[i].classList.contains("open")) {
-        detail[i].classList.remove("open");
-   
-    } else {
-        detail[i].classList.add("open");
-     
+tabs.forEach((tab) => {
+    const detail = tab.querySelector(".detail-mobile");
+    
+
+    tab.onclick = function() {
+        tabs.forEach((_tab) => _tab.querySelector(".detail-mobile").classList.remove("open"));
+        detail.classList.add("open");
+
+        const subtabs = tab.querySelectorAll(".detail-mobile.open .tabs.collection>li");
+        subtabs.forEach((subtab) => {
+            const subtabDetail = subtab.querySelector(".subtab");
+
+            subtab.onclick = function () {
+
+                subtabs.forEach((_subtab) => _subtab.querySelector(".subtab").classList.remove("open"));
+                subtabDetail.classList.add("open");
+            }
+        })
     }
-}
+})
 
 
 $('.mobile').owlCarousel({

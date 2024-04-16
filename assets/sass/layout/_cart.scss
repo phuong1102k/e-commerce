@@ -1,0 +1,91 @@
+.navbar-pc .cart {
+  padding: 16px 8px;
+  position: relative;
+
+  &:hover .nav-detail {
+    display: block;
+  }
+
+  .nav-detail {
+    display: none;
+    position: absolute;
+    padding: 1.6rem 0;
+
+    top: 6rem;
+    left: -25rem;
+    width: 30rem;
+    min-height: 10rem;
+    background-color: var(--secondary-clr);
+    border: var(--border);
+    border-radius: var(--border-radius);
+
+    .subnav-tip {
+      position: absolute;
+      z-index: 0;
+      overflow: hidden;
+      width: 20px;
+      height: 20px;
+      border-top: 1px solid rgb(231, 229, 220);
+      border-left: 1px solid rgb(231, 229, 220);
+      background-color: var(--secondary-clr);
+      transform: rotate(45deg);
+      top: -1rem;
+      left: 25.5rem;
+    }
+
+    .detail {
+      p {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.empty {
+  padding: 2rem;
+  .image-cover {
+    width: 5rem;
+    margin: 0 auto;
+    // height: 5rem;
+  }
+  p {
+    text-align: center;
+  }
+}
+
+.navbar-mobile .cart {
+  display: inline-block;
+  position: relative;
+
+  .nav-bars-btn {
+    cursor: pointer;
+  }
+
+  .nav-input:checked + .navbar-cart {
+    opacity: 1;
+    transform: translateX(-92.5%);
+  }
+
+  .nav-input {
+    display: none;
+  }
+  .navbar-cart {
+    position: absolute;
+    top: 8.5rem;
+    position: fixed;
+    border-radius: var(--border-radius);
+    border: var(--border);
+
+    width: 36rem;
+    min-height: 10rem;
+    opacity: 0;
+    transition: transform 0.2s linear, opacity 0.2s linear;
+    will-change: opacity, transform;
+
+    background-color: #fff;
+  }
+
+  // .navbar-cart {
+  //   position: absolute !important;
+  // }
+}

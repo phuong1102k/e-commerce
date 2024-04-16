@@ -48,7 +48,9 @@
       defer></script>
 
     <!-- swipper slider -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"
+      defer></script>
 
     <!-- CSS custom -->
     <link rel="stylesheet" href="./assets/css/main.min.css" />
@@ -77,27 +79,25 @@
                   <ul class="tabs">
                     <!-- body lotion -->
                     <li>
-                      <a href="./products.html" id="tab1"
+                      <a href="#tab1" id="tab1"
                         ><i class="fa-solid fa-angle-right"></i> Body lotion
                       </a>
                     </li>
                     <!-- body wash -->
                     <li>
-                      <a href="./products.html" id="tab2"
+                      <a href="#tab2" id="tab2"
                         ><i class="fa-solid fa-angle-right"></i> Body wash
                       </a>
                     </li>
                     <!-- face oil -->
                     <li>
-                      <a href="./products.html" id="tab3"
+                      <a href="#tab3" id="tab3"
                         ><i class="fa-solid fa-angle-right"></i> Face oil
                       </a>
                     </li>
 
                     <li>
-                      <a href="./products.html" id="tab4"
-                        ><i class="fa-solid fa-angle-right"></i> Perfume
-                      </a>
+                      <a href="#tab4" id="tab4"><i class="fa-solid fa-angle-right"></i> Perfume </a>
                     </li>
                   </ul>
 
@@ -294,9 +294,29 @@
           </a>
 
           <!-- cart -->
-          <a href="#" class="cart">
+          <!-- <a href="#" class="cart">
             <i class="fa-solid fa-cart-shopping"></i>
-          </a>
+          </a> -->
+
+          <div class="cart">
+            <a href="#" class="cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+
+            <div class="nav-detail">
+              <span class="subnav-tip"></span>
+
+              <div class="detail">
+                <div class="empty">
+                  <div class="image-cover">
+                    <img
+                      src="./assets/images/logo/NicePng_money-bag-clipart-png_3077213.png"
+                      alt="cart-img" />
+                  </div>
+                  <p>Your cart currently empty</p>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="overlay"></div> -->
+          </div>
         </div>
 
         <div class="navbar-mobile">
@@ -338,7 +358,7 @@
               </div>
 
               <ul class="nav-list">
-                <li class="nav" onclick="toggleNav(0)">
+                <li class="nav">
                   <a class="tab-button">
                     <a class="shop">Shop</a>
                     <span class="more-button"><i class="fa-solid fa-angle-right"></i></span>
@@ -347,19 +367,19 @@
                     <ul class="tabs">
                       <!-- body lotion -->
                       <li>
-                        <a href="./products.html" id="tab1"
+                        <a href="#tab1" id="tab1"
                           ><i class="fa-solid fa-angle-right"></i> Body lotion
                         </a>
                       </li>
                       <!-- body wash -->
                       <li>
-                        <a href="./products.html" id="tab2"
+                        <a href="#tab2" id="tab2"
                           ><i class="fa-solid fa-angle-right"></i> Body wash
                         </a>
                       </li>
                       <!-- face oil -->
                       <li>
-                        <a href="./products.html" id="tab3"
+                        <a href="#tab3" id="tab3"
                           ><i class="fa-solid fa-angle-right"></i> Face oil
                         </a>
                       </li>
@@ -373,34 +393,104 @@
                   </div>
                 </li>
 
-                <li class="nav" onclick="toggleNav(1)">
+                <li class="nav">
                   <a class="tab-button">
                     <a class="shop">Collections</a>
                     <span class="more-button"><i class="fa-solid fa-angle-right"></i></span>
                   </a>
                   <div class="detail-mobile">
-                    <ul class="tabs">
+                    <ul class="tabs collection">
                       <!-- trending -->
                       <li>
-                        <a href="#tab1" id=""><i class="fa-solid fa-angle-right"></i> Trending </a>
+                        <a href="#tab1"><i class="fa-solid fa-angle-right"></i> Trending </a>
+                        <div class="subtab open">
+                          <ul class="subtab-list">
+                            <li class="subtab-list-item">
+                              <i class="fa-solid fa-angle-right"></i>New Arrivals
+                            </li>
+                            <li class="subtab-list-item">
+                              <i class="fa-solid fa-angle-right"></i>Bundle and Save
+                            </li>
+                            <li class="subtab-list-item">
+                              <i class="fa-solid fa-angle-right"></i>Best Sellers
+                            </li>
+                            <li class="subtab-list-item">
+                              <i class="fa-solid fa-angle-right"></i>Summer Sale
+                            </li>
+                          </ul>
+                        </div>
                       </li>
-                      <!-- body wash -->
+                      <!-- Product Type -->
                       <li>
                         <a href="#" id=""><i class="fa-solid fa-angle-right"></i> Product Type </a>
+
+                        <div class="subtab">
+                          <ul class="subtab-list">
+                            <li class="subtab-list-item">
+                              <i class="fa-solid fa-angle-right"></i>Body Lotion
+                            </li>
+                            <li class="subtab-list-item">
+                              <i class="fa-solid fa-angle-right"></i>Body Wash
+                            </li>
+                            <li class="subtab-list-item">
+                              <i class="fa-solid fa-angle-right"></i>Face Oil
+                            </li>
+                            <li class="subtab-list-item">
+                              <i class="fa-solid fa-angle-right"></i>Perfume
+                            </li>
+                          </ul>
+                        </div>
                       </li>
                       <!-- skin type -->
                       <li>
                         <a href="#" id=""><i class="fa-solid fa-angle-right"></i> Skin Type </a>
+
+                        <div class="subtab">
+                          <ul class="subtab-list">
+                            <li class="subtab-list-item">
+                              <i class="fa-solid fa-angle-right"></i>Normal
+                            </li>
+                            <li class="subtab-list-item">
+                              <i class="fa-solid fa-angle-right"></i>Dry Skin
+                            </li>
+                            <li class="subtab-list-item">
+                              <i class="fa-solid fa-angle-right"></i>Oily
+                            </li>
+                            <li class="subtab-list-item">
+                              <i class="fa-solid fa-angle-right"></i>Sensitive
+                            </li>
+                            <li class="subtab-list-item">
+                              <i class="fa-solid fa-angle-right"></i>All Skin Types
+                            </li>
+                          </ul>
+                        </div>
                       </li>
                       <!-- ingredients -->
                       <li>
                         <a href="#" id=""><i class="fa-solid fa-angle-right"></i> Ingredients </a>
+
+                        <div class="subtab">
+                          <ul class="subtab-list">
+                            <li class="subtab-list-item">
+                              <i class="fa-solid fa-angle-right"></i>Lemon
+                            </li>
+                            <li class="subtab-list-item">
+                              <i class="fa-solid fa-angle-right"></i>White Peach
+                            </li>
+                            <li class="subtab-list-item">
+                              <i class="fa-solid fa-angle-right"></i>Orange
+                            </li>
+                            <li class="subtab-list-item">
+                              <i class="fa-solid fa-angle-right"></i>Summer Lily
+                            </li>
+                          </ul>
+                        </div>
                       </li>
                     </ul>
                   </div>
                 </li>
 
-                <li class="nav" onclick="toggleNav(2)">
+                <li class="nav">
                   <a class="tab-button">
                     <a class="more-title">More</a>
                     <span class="more-button"><i class="fa-solid fa-angle-right"></i></span>
@@ -423,7 +513,7 @@
                         <a href="#"><i class="fa-solid fa-angle-right"></i>Lookbook</a>
                       </li>
 
-                      <li class="subnav">
+                      <li class="subnav" style="padding-bottom: 0">
                         <a href="#"><i class="fa-solid fa-angle-right"></i>Reviews</a>
                       </li>
                     </ul>
@@ -438,6 +528,7 @@
             <img src="./assets/images/logo/Themea_Logo-Brand_Black.svg" alt="Themea_logo" />
           </a>
 
+          <!-- right -->
           <div class="right">
             <!-- user -->
             <a href="./user.html" class="user">
@@ -445,8 +536,22 @@
             </a>
 
             <!-- cart -->
-            <a href="#" class="cart">
-              <i class="fa-solid fa-cart-shopping"></i>
+            <a class="cart">
+              <label class="nav-bars-btn" for="cart-input">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </label>
+              <input class="nav-input" type="checkbox" id="cart-input" />
+
+              <div class="navbar-cart">
+                <div class="empty">
+                  <div class="image-cover">
+                    <img
+                      src="./assets/images/logo/NicePng_money-bag-clipart-png_3077213.png"
+                      alt="cart-img" />
+                  </div>
+                  <p>Your cart currently empty</p>
+                </div>
+              </div>
             </a>
           </div>
         </div>

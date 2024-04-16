@@ -266,6 +266,15 @@ header {
         padding: var(--pd-item) 0;
         border-top: var(--border);
       }
+
+      .tabs.collection {
+        padding-bottom: 0;
+
+        & > li {
+          padding-bottom: 0;
+        }
+      }
+
       .nav {
         position: relative;
 
@@ -274,6 +283,18 @@ header {
           overflow: hidden;
           &.open {
             max-height: unset;
+          }
+
+          .subtab {
+            max-height: 0;
+            overflow: hidden;
+            &.open {
+              max-height: unset;
+            }
+
+            &-list-item {
+              padding-left: 1.6rem;
+            }
           }
         }
       }
